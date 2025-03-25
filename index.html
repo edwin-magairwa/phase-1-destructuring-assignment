@@ -1,13 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Lab</title>
-</head>
-<body>
-  hello
-  <script type="text/javascript" src="index.js"></script>
-</body>
-</html>
+// Given Data
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+  address: {
+    city: 'New York',
+    state: 'NY',
+  }
+};
+
+const fruits = ['apple', 'banana', 'cherry', 'date'];
+
+const fullName = 'Alice Wonderland Johnson';
+
+// 1. Destructure firstName and lastName from person
+const { firstName, lastName } = person;
+console.log(firstName, lastName); // Output: John Doe
+
+// 2. Destructure city and state from person.address
+const { city, state } = person.address;
+console.log(city, state); // Output: New York NY
+
+// 3. Destructure the first two elements from fruits
+const [firstFruit, secondFruit] = fruits;
+console.log(firstFruit, secondFruit); // Output: apple banana
+
+// 4. Destructure only the last fruit using skipping
+const [, , , lastFruit] = fruits;
+console.log(lastFruit); // Output: date
+
+// 5. Destructure the name components from fullName
+const [first, middle, last] = fullName.split(' ');
+console.log(first, middle, last); // Output: Alice Wonderland Johnson
+
+// 6. Destructure only the first and last name, skipping the middle name
+const [firstN, , lastN] = fullName.split(' ');
+console.log(firstN, lastN); // Output: Alice Johnson
